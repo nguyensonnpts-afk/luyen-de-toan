@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luyện đề Toán</title>
+<link rel="stylesheet" href="lib/katex/katex.min.css">
+<link rel="stylesheet" href="lib/style.css">
+<script src="lib/katex/katex.min.js"></script>
+<script src="lib/katex/contrib/auto-render.min.js"></script>
+<script src="lib/app.js"></script>
+<script src="de/danh-sach.js"></script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Luyện đề Toán</h1>
+    <nav class="tabs">
+      <a href="#/" data-tab="de">Đề thi</a>
+      <a href="#/chuyen-de" data-tab="cd">Luyện chuyên đề</a>
+      <a href="#/ket-qua" data-tab="kq">Kết quả của em</a>
+    </nav>
+  </div>
+</header>
+<div class="topbar hidden" id="topbar-exam">
+  <div class="wrap">
+    <strong id="tb-title" class="grow"></strong>
+    <span class="muted" id="tb-progress"></span>
+    <span class="timer" id="timer">--:--</span>
+    <button class="primary" id="btn-nop">Nộp bài</button>
+  </div>
+</div>
+<main class="wrap" id="app"><p class="muted">Đang tải đề…</p></main>
+<footer class="muted">Bài làm và kết quả được lưu trên trình duyệt của máy này.</footer>
+</body>
+</html>
