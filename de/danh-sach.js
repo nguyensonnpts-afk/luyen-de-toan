@@ -4,4 +4,6 @@
 // Ẩn tạm một đề: thêm // vào đầu dòng của đề đó.
 window.DANH_SACH_DE = [
   "2026-gk1-chu-van-an",
+  "2026-gk1-thpt-quang-tri",
+  "2026-kscl-gk1-hung-yen",
 ];
