@@ -1,0 +1,28 @@
+rules_version = '2';
+// Rules bảo mật cho web Luyện đề Toán. Dán toàn bộ file này vào
+// Firebase › Firestore Database › Rules rồi bấm Publish (xem FIREBASE.md, Bước 5).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function laChuTaiKhoan(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // Mỗi học sinh chỉ ghi (sửa, xoá) được dữ liệu của chính mình.
+    match /users/{uid} {
+      allow read, write: if laChuTaiKhoan(uid);
+
+      match /{boSuuTap}/{maDoc} {
+        allow read, write: if laChuTaiKhoan(uid)
+          && boSuuTap in ['lichSu', 'dangLam', 'chuyenDe'];
+      }
+    }
+
+    // Tab "Bảng điểm": AI CŨNG XEM ĐƯỢC các bài đã nộp (không cần đăng nhập).
+    // Bài nộp chỉ chứa tên học sinh, điểm và bài làm, không chứa email.
+    // Muốn chỉ người đăng nhập mới xem được: đổi "if true" thành "if request.auth != null".
+    match /{duongDan=**}/lichSu/{maDoc} {
+      allow read: if true;
+    }
+  }
+}
