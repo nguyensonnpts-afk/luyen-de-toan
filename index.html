@@ -9,6 +9,8 @@
 <script src="lib/katex/katex.min.js"></script>
 <script src="lib/katex/contrib/auto-render.min.js"></script>
 <script src="lib/app.js"></script>
+<script src="lib/firebase-config.js"></script>
+<script src="lib/dong-bo.js"></script>
 <script src="de/danh-sach.js"></script>
 </head>
 <body>
@@ -19,7 +21,9 @@
       <a href="#/" data-tab="de">Đề thi</a>
       <a href="#/chuyen-de" data-tab="cd">Luyện chuyên đề</a>
       <a href="#/ket-qua" data-tab="kq">Kết quả của em</a>
+      <a href="#/lop" data-tab="lop" class="hidden">Kết quả lớp</a>
     </nav>
+    <div class="tai-khoan" id="tai-khoan"></div>
   </div>
 </header>
 <div class="topbar hidden" id="topbar-exam">
@@ -31,6 +35,6 @@
   </div>
 </div>
 <main class="wrap" id="app"><p class="muted">Đang tải đề…</p></main>
-<footer class="muted">Bài làm và kết quả được lưu trên trình duyệt của máy này.</footer>
+<footer class="muted" id="footer-luu">Bài làm và kết quả được lưu trên trình duyệt của máy này.</footer>
 </body>
 </html>

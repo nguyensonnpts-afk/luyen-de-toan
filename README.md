@@ -4,6 +4,7 @@ Web luyện đề Toán cho học sinh: làm bài trực tuyến theo cấu trú
 
 - Mở trực tiếp `index.html` trên máy là chạy được, không cần mạng (thư viện công thức KaTeX đã có sẵn trong `lib/katex`).
 - Đưa lên GitHub Pages để học sinh vào bằng đường link.
+- Tuỳ chọn: bật Firebase để học sinh đăng nhập Google, kết quả đồng bộ trực tiếp trên mọi thiết bị và thầy/cô xem điểm cả lớp. Xem [FIREBASE.md](FIREBASE.md).
 
 ## Cấu trúc
 
@@ -11,12 +12,16 @@ Web luyện đề Toán cho học sinh: làm bài trực tuyến theo cấu trú
 index.html          trang chính
 lib/                giao diện và bộ chấm điểm (không cần sửa)
   app.js, style.css, katex/
+  firebase-config.js  cấu hình Firebase (điền một lần, xem FIREBASE.md)
+  dong-bo.js          đồng bộ qua Firebase
 de/                 dữ liệu đề
   danh-sach.js      danh sách đề hiển thị
   _mau-de.js        file mẫu để chép khi thêm đề
   <ma-de>.js        mỗi đề một file
   hinh/<ma-de>/     ảnh của từng đề
 HUONG-DAN.md        cách thêm đề mới
+FIREBASE.md         cách bật đồng bộ nhiều thiết bị
+firestore.rules     rules bảo mật mẫu cho Firestore
 ```
 
 Thêm đề: xem [HUONG-DAN.md](HUONG-DAN.md).

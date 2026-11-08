@@ -99,3 +99,12 @@ table.tk th{color:var(--muted);font-weight:600}
 .bar .lo{background:var(--bad)} .bar .mid{background:var(--warn)} .bar .hi{background:var(--ok)}
 footer{text-align:center;font-size:.85rem;padding:12px 0 28px}
 @media print{header,.topbar,.noprint,footer{display:none!important}.card{break-inside:avoid;border:none}body{background:#fff}}
+/* tài khoản & đồng bộ */
+.tai-khoan{margin-left:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.9rem}
+.tai-khoan:empty{display:none}
+.tai-khoan button{padding:5px 12px}
+.tk-ten{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dongbo-tt{font-size:.8rem;padding:1px 8px;border-radius:999px;background:var(--primary-soft);color:var(--primary)}
+.dongbo-tt.ok{background:var(--ok-soft);color:var(--ok)}
+.dongbo-tt.cho{background:var(--warn-soft);color:var(--warn)}
+.dongbo-tt.loi{background:var(--bad-soft);color:var(--bad)}

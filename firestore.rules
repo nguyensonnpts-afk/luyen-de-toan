@@ -1,0 +1,36 @@
+rules_version = '2';
+// Rules bảo mật cho web Luyện đề Toán. Dán toàn bộ file này vào
+// Firebase › Firestore Database › Rules rồi bấm Publish (xem FIREBASE.md, Bước 5).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Email Google của thầy/cô được xem kết quả cả lớp (viết thường, giống lib/firebase-config.js).
+    // Ví dụ: ['thay.son@gmail.com', 'co.lan@gmail.com']
+    function laGiaoVien() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['email-giao-vien@gmail.com'];
+    }
+
+    function laChuTaiKhoan(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // Mỗi học sinh chỉ đọc/ghi được dữ liệu của chính mình.
+    match /users/{uid} {
+      allow read, write: if laChuTaiKhoan(uid);
+      allow read: if laGiaoVien();
+
+      match /{boSuuTap}/{maDoc} {
+        allow read, write: if laChuTaiKhoan(uid)
+          && boSuuTap in ['lichSu', 'dangLam', 'chuyenDe'];
+        allow read: if laGiaoVien();
+      }
+    }
+
+    // Tab "Kết quả lớp": giáo viên đọc mọi bài đã nộp của mọi học sinh.
+    match /{duongDan=**}/lichSu/{maDoc} {
+      allow read: if laGiaoVien();
+    }
+  }
+}

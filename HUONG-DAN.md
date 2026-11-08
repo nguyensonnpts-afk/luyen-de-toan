@@ -55,5 +55,7 @@ Nếu tổng điểm khác 10, web tự quy đổi thêm về thang 10.
 
 ## Kết quả của học sinh
 
-Kết quả được lưu trên trình duyệt của máy học sinh. Ở tab **Kết quả của em**, học sinh bấm "Tải toàn bộ kết quả" để gửi file `.json` cho thầy/cô.
+Nếu đã bật Firebase ([FIREBASE.md](FIREBASE.md)): học sinh đăng nhập Google, kết quả tự đồng bộ trên mọi thiết bị, và thầy/cô xem điểm cả lớp ở tab **Kết quả lớp** (cập nhật trực tiếp). Cách gửi file bên dưới vẫn dùng được.
+
+Nếu chưa bật Firebase: kết quả được lưu trên trình duyệt của máy học sinh. Ở tab **Kết quả của em**, học sinh bấm "Tải toàn bộ kết quả" để gửi file `.json` cho thầy/cô.
 Thầy/cô mở web, vào tab đó, bấm **Nhập file kết quả** (chọn được nhiều file cùng lúc) để xem bảng điểm của cả lớp, lọc theo tên, và tải bảng điểm Excel (.csv).
