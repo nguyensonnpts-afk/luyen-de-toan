@@ -4,7 +4,7 @@ Web luyện đề Toán cho học sinh: làm bài trực tuyến theo cấu trú
 
 - Mở trực tiếp `index.html` trên máy là chạy được, không cần mạng (thư viện công thức KaTeX đã có sẵn trong `lib/katex`).
 - Đưa lên GitHub Pages để học sinh vào bằng đường link.
-- Tuỳ chọn: bật Firebase để học sinh đăng nhập Google, kết quả đồng bộ trực tiếp trên mọi thiết bị và thầy/cô xem điểm cả lớp. Xem [FIREBASE.md](FIREBASE.md).
+- Tuỳ chọn: bật Firebase để học sinh đăng nhập Google, kết quả đồng bộ trực tiếp trên mọi thiết bị và mọi người xem được bảng điểm. Xem [FIREBASE.md](FIREBASE.md).
 
 ## Cấu trúc
 
